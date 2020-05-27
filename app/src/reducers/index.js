@@ -1,7 +1,11 @@
-import { FETCH_RICKNMORTY } from '../actions';
+import { 
+    FETCH_RICKNMORTY, 
+    FETCH_RICKNMORTY_SUCCESS, 
+    FETCH_RICKNMORTY_FAILURE 
+} from '../actions';
 
 const initialState = {
-    id: '1',
+    character: [],
     error: '',
     isFetching: false
 };
@@ -12,7 +16,21 @@ function reducer(state = initialState, action) {
         case FETCH_RICKNMORTY:
             return {
                 ...state,
-                isFetching: true,
+                error: '',
+                isFetching: true
+            };
+        case FETCH_RICKNMORTY_SUCCESS:
+            return {
+                ...state,
+                error: '',
+                isFetching: false,
+                character: action.payload
+            };
+        case FETCH_RICKNMORTY_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isFetching: false
             };
         default:
             return state;
