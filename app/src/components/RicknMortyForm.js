@@ -1,12 +1,20 @@
 import React from "react";
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+    color: #667F8D;
+`
+
+const StyledButtonName = styled.h4`
+    color: #FFF;
+    font-size: 1rem;
+`
 
 export default function RicknMortyForm(props) {
    
     return (
-        <form onSubmit={props.fetchRicknMorty}>
-            <label htmlFor="charcID">Character ID: </label>
-            <input type="number" id="id" name="id"/>
-            <input type="submit"/>
-        </form>
+        <StyledButton onClick={props.fetchRicknMorty}>
+            <StyledButtonName>Fetch Characters</StyledButtonName>
+        </StyledButton>
     )
 }

@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import axios from 'axios';
 
 export const FETCH_RICKNMORTY = "FETCH_RICKNMORTY";
@@ -6,12 +5,9 @@ export const FETCH_RICKNMORTY_SUCCESS = "FETCH_RICKNMORTY_SUCCESS";
 export const FETCH_RICKNMORTY_FAILURE = "RETCH_RICKNMORTY_FAILURE";
 
 export const getRicknMorty = () => dispatch => {
-
-    // const [charc, setCharc] = useState('1');
-    // const [charcID, setCharcID] = useState('1');
     
-   dispatch({type: FETCH_RICKNMORTY});
-     axios
+    dispatch({type: FETCH_RICKNMORTY});
+    axios
        .get(`https://rickandmortyapi.com/api/character/`)
        .then(res => {
            console.log(res.data);
@@ -25,3 +21,5 @@ export const getRicknMorty = () => dispatch => {
         });
        });
     };
+
+    
