@@ -11,7 +11,7 @@ const StyledHeader = styled.h2`
     color: #315A72;
     font-size: 4rem;
 
-`
+`;
 
 const StyledName = styled.h4`
     background-color: #333F46;
@@ -22,21 +22,21 @@ const StyledName = styled.h4`
     padding: 2rem;
     font-size: 3rem;
     color: #FFF;    
-`
+`;
 
 
 const RicknMorty = props => {
     const fetchRicknMorty = e => {
         e.preventDefault();
         props.getRicknMorty();
-    }
+    };
 
     return (
         <>
             <StyledHeader>Rick and Morty</StyledHeader>
             <div>
-                {props.character.map(character => (
-                    <StyledName key={character.id}>{character.name}</StyledName>
+            {props.character.map(character => ( 
+              <StyledName key={character.id}>{character.name}: {character.status}</StyledName>
                 ))}
                 <RicknMortyForm fetchRicknMorty={fetchRicknMorty}/>
             </div>
