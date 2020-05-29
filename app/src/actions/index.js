@@ -10,7 +10,7 @@ export const getRicknMorty = () => dispatch => {
 
     dispatch({type: FETCH_RICKNMORTY});
     axios
-       .get(`https://rickandmortyapi.com/character`)
+       .get(`https://rickandmortyapi.com/api/character`)
        .then(res => {
            console.log(res.data);
           dispatch({type: FETCH_RICKNMORTY_SUCCESS, payload: res.data.results});
