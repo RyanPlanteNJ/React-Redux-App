@@ -6,11 +6,11 @@ export const FETCH_RICKNMORTY = "FETCH_RICKNMORTY";
 export const FETCH_RICKNMORTY_SUCCESS = "FETCH_RICKNMORTY_SUCCESS";
 export const FETCH_RICKNMORTY_FAILURE = "RETCH_RICKNMORTY_FAILURE";
 
-export const getRicknMorty = (api) => dispatch => {
+export const getRicknMorty = () => dispatch => {
 
     dispatch({type: FETCH_RICKNMORTY});
     axios
-       .get(api)
+       .get(`https: //rickandmortyapi.com/character`)
        .then(res => {
            console.log(res.data);
           dispatch({type: FETCH_RICKNMORTY_SUCCESS, payload: res.data});
