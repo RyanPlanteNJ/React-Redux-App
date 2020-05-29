@@ -13,7 +13,7 @@ export const getRicknMorty = () => dispatch => {
        .get(`https: //rickandmortyapi.com/character`)
        .then(res => {
            console.log(res.data);
-          dispatch({type: FETCH_RICKNMORTY_SUCCESS, payload: res.data});
+          dispatch({type: FETCH_RICKNMORTY_SUCCESS, payload: res.data.results});
        })
        .catch(err => {
         console.log(err.response);
