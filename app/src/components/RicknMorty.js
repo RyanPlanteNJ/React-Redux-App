@@ -14,6 +14,8 @@ const StyledHeader = styled.h2`
 `;
 
 const StyledName = styled.h4`
+    display: flex;
+    flex-flow: column;
     background-color: #333F46;
     margin: 3px 0;
     border-radius: 3rem;
@@ -24,6 +26,12 @@ const StyledName = styled.h4`
     color: #FFF;    
 `;
 
+const StyledImg = styled.img`
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    width:300px;
+   `
 
 const RicknMorty = props => {
     const fetchRicknMorty = e => {
@@ -35,8 +43,10 @@ const RicknMorty = props => {
         <>
             <StyledHeader>Rick and Morty</StyledHeader>
             <div>
+                
             {props.character.map(character => ( 
-              <StyledName key={character.id}>{character.name}: {character.status}</StyledName>
+                <StyledName key={character.id}>
+                    <StyledImg src={character.image}/>{character.name}: {character.status}</StyledName>
                 ))}
                 <RicknMortyForm fetchRicknMorty={fetchRicknMorty}/>
             </div>
